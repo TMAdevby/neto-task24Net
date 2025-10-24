@@ -10,7 +10,7 @@ public class Client {
     public static void main(String[] args) {
         String serverIP = "localhost"; // 127.0.0.1
 
-        int serverPort = 8089;
+        int serverPort = 8085;
 
         try(Socket socket = new Socket(serverIP, serverPort)){
             System.out.println("Подключились успешно!");
@@ -26,7 +26,7 @@ public class Client {
             String greating = in.readLine();
             System.out.println("Сервер: " + greating);
 
-            String name = "Студент Java";
+            String name = "Сережа";
             out.println(name);
             System.out.println("Отправили: " + name);
 

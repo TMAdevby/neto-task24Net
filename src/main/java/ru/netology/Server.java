@@ -20,7 +20,7 @@ public class Server {
                     String clientIP = clientSocket.getInetAddress().getHostAddress();
                     int clientPort = clientSocket.getPort();
 
-                    System.out.println("Новое подключение!");
+                    System.out.println("New connection accepted");
                     System.out.println("IP клиента: " + clientIP);
                     System.out.println("Порт клиента: " + clientPort);
 
@@ -32,17 +32,12 @@ public class Server {
                             clientSocket.getOutputStream(),true
                     );
 
-                    out.println("Привет! Отправь мне строку");
-                    String message = in.readLine();
-                    System.out.println("Получено от клиента: " + message);
+                    out.println("Привет! Напишите свое имя?");
+                    String name = in.readLine();
+                    System.out.println("Получено от клиента: " + name);
 
-                    String response = String.format(
-                            "Привет, %s! Твой порт: %d",
-                            message,
-                            clientPort
-                    );
+                    out.println(String.format("Hi %s, your port is %d", name, clientSocket.getPort()));
 
-                    out.println(response);
                     System.out.println("Ответ отправлен клиенту");
                 } catch (IOException e) {
                     System.err.println("Ошибка при работе с клиентом: " + e.getMessage());
