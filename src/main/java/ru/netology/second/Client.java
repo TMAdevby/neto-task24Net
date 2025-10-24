@@ -1,4 +1,4 @@
-package ru.netology;
+package ru.netology.second;
 
 import java.io.BufferedReader;
 import java.io.IOException;
