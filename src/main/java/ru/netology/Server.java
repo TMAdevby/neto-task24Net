@@ -9,7 +9,7 @@ import java.net.Socket;
 
 public class Server {
     public static void main(String[] args) {
-        int port = 8089;
+        int port = 8085;
 
         System.out.println("Сервер запущен на порту " + port);
         System.out.println("Ожидаем подключение ... ");
