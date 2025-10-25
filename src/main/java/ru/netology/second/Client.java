@@ -28,11 +28,13 @@ public class Client {
             String name = "Сережа";
             out.println(name);
 
+            String question = in.readLine();
+            System.out.println("Сервер: " + question);
             String result = Math.random() < 0.5 ? "no" : "yes";
             out.println(result);
 
             String answer = in.readLine();
-            System.out.println(answer);
+            System.out.println("Сервер: " + answer);
 
         } catch (IOException e) {
             System.err.println("Ошибка подключения: " + e.getMessage());

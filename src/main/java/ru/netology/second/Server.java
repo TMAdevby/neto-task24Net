@@ -38,7 +38,8 @@ public class Server {
                     System.out.println("Client : " + name);
                     out.println("Are you child? (yes/no)");
                     String answer = in.readLine();
-                    if(answer.equals("no")){
+                    System.out.println("Client : " + answer);
+                    if(answer.equals("yes")){
                         out.println(String.format("Welcome to the kids area, %s ! Let's play!", name));
                     }else{
                         out.println(String.format("Welcome to the adult zone, %s ! Have a good rest, or a good working day!", name));
