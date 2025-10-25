@@ -23,29 +23,16 @@ public class Client {
                     socket.getOutputStream(),true
             );
 
-            for (int i = 0; i < 3; i++) {
-                if(i == 0){
-                    String greating = in.readLine();
-                    System.out.println("Сервер: " + greating);
-                    String name = "Сережа";
-                    out.println(name);
-                }
-                if(i == 1){
-                    String result = Math.random() < 0.5 ? "no" : "yes";
-                    out.println(result);
-                }
-
-
-            }
             String greating = in.readLine();
             System.out.println("Сервер: " + greating);
-
             String name = "Сережа";
             out.println(name);
-            System.out.println("Отправили: " + name);
 
-            String response = in.readLine();
-            System.out.println("Сервер: " + response);
+            String result = Math.random() < 0.5 ? "no" : "yes";
+            out.println(result);
+
+            String answer = in.readLine();
+            System.out.println(answer);
 
         } catch (IOException e) {
             System.err.println("Ошибка подключения: " + e.getMessage());
