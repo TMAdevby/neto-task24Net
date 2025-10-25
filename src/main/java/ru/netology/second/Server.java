@@ -32,13 +32,25 @@ public class Server {
                             clientSocket.getOutputStream(),true
                     );
 
-                    out.println("Привет! Напишите свое имя?");
-                    String name = in.readLine();
-                    System.out.println("Получено от клиента: " + name);
+                    for(int i = 0; i < 3 ; i++ ) {
+                        String name = null;
+                        String answer = null;
+                        if(i == 0) {
+                            out.println("Write your name");
+                            name = in.readLine();
+                        }
+                        if(i == 1){
+                            System.out.println("Client : " + name);
+                            out.println("Are you child? (yes/no)");
+                            answer = in.readLine();
 
-                    out.println(String.format("Hi %s, your port is %d", name, clientSocket.getPort()));
+                        }
+                        System.out.println("Получено от клиента: " + name);
 
-                    System.out.println("Ответ отправлен клиенту");
+                        out.println(String.format("Hi %s, your port is %d", name, clientSocket.getPort()));
+
+                        System.out.println("Ответ отправлен клиенту");
+                    }
                 } catch (IOException e) {
                     System.err.println("Ошибка при работе с клиентом: " + e.getMessage());
                 }

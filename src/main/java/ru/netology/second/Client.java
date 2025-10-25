@@ -8,7 +8,7 @@ import java.net.Socket;
 
 public class Client {
     public static void main(String[] args) {
-        String serverIP = "localhost"; // 127.0.0.1
+        String serverIP = "netology.homework"; // 127.0.0.1
 
         int serverPort = 8085;
 
@@ -23,6 +23,20 @@ public class Client {
                     socket.getOutputStream(),true
             );
 
+            for (int i = 0; i < 3; i++) {
+                if(i == 0){
+                    String greating = in.readLine();
+                    System.out.println("Сервер: " + greating);
+                    String name = "Сережа";
+                    out.println(name);
+                }
+                if(i == 1){
+                    String result = Math.random() < 0.5 ? "no" : "yes";
+                    out.println(result);
+                }
+
+
+            }
             String greating = in.readLine();
             System.out.println("Сервер: " + greating);
 
